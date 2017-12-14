@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ball : MonoBehaviour {
 
@@ -8,7 +10,10 @@ public class ball : MonoBehaviour {
     private Paddle myPaddle;
 
     float randomX, randomY;
-
+    int score1;
+    int score2;
+    public Text score1text;
+    public Text score2text;
     private Vector3 paddleToBallVector;
 
     bool hasStarted = false;
@@ -56,7 +61,58 @@ public class ball : MonoBehaviour {
                 this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 10f);
             }
         }
-
+        
        
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Left")
+        {
+            UpdateScore1();
+            
+            if(score1 == 5)
+            {
+                SceneManager.LoadScene("Level2");
+            }
+
+            if(score1 == 10)
+            {
+                SceneManager.LoadScene("Level3");
+            }
+        }
+
+        if (collision.gameObject.name == "Right")
+        {
+            UpdateScore2();
+
+            if (score2 == 5)
+            {
+                SceneManager.LoadScene("Level2");
+            }
+
+            if (score2 == 10)
+            {
+                SceneManager.LoadScene("Level3");
+            }
+        }
+
+
+    }
+
+    void UpdateScore1()
+    {
+        score1 += 1;
+
+        score1text.text = score1.ToString();
+
+    }
+
+    void UpdateScore2()
+    {
+        score2 += 1;
+        score2text.text = score2.ToString();
+    }
+
+
 }
