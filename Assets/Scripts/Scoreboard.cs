@@ -38,7 +38,7 @@ public class Scoreboard : MonoBehaviour {
         score1Text.text = PlayerPrefs.GetInt("score1").ToString();
         score2Text.text = PlayerPrefs.GetInt("score2").ToString();
     }
-
+    //Resets Score
     void OnApplicationClose()
     {
         PlayerPrefs.SetInt("score1", 0);
