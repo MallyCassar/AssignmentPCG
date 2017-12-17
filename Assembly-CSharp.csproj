@@ -49,7 +49,7 @@
      <Compile Include="Assets\Scripts\Collider.cs" />
      <Compile Include="Assets\Scripts\Paddle.cs" />
      <Compile Include="Assets\Scripts\Paddle2.cs" />
-     <Compile Include="Assets\Scripts\Scoreboard.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\ball.cs" />
      <Compile Include="Assets\Scripts\collider2.cs" />
      <Compile Include="Assets\Scripts\menuscript.cs" />
