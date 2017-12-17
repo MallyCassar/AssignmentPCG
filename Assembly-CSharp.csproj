@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Paddle.cs" />
      <Compile Include="Assets\Scripts\Paddle2.cs" />
      <Compile Include="Assets\Scripts\Scoreboard.cs" />
@@ -54,6 +55,18 @@
      <Compile Include="Assets\Scripts\movingobstacle.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Malcolm Cassar/Desktop/REPO/AssignmentPCG/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+=======
+     <Compile Include="Assets\Scripts\Collider.cs" />
+     <Compile Include="Assets\Scripts\Paddle.cs" />
+     <Compile Include="Assets\Scripts\Paddle2.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ball.cs" />
+     <Compile Include="Assets\Scripts\collider2.cs" />
+     <Compile Include="Assets\Scripts\menuscript.cs" />
+     <Compile Include="Assets\Scripts\movingobstacle.cs" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>E:/School/Level 4  Yr2/Semester 1/Programming for PC Games/REPO/AssignmentPCG/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+>>>>>>> 9a1f0a27c122f16a91f902189069472748021044
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
