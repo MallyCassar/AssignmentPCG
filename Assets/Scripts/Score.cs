@@ -14,8 +14,6 @@ public class Score : MonoBehaviour {
     private GameObject ball;
     private int score;
 
-
-
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +25,7 @@ public class Score : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Ball")
+        if (other.tag == "ball")
         {
             score += 1;
             Destroy(ball);
