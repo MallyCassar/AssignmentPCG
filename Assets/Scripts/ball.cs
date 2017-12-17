@@ -21,8 +21,8 @@ public class ball : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        randomX = Random.Range(0f, 0.2f);
-        randomY = Random.Range(0f, 0.2f);
+        randomX = UnityEngine.Random.Range(0f, 0.2f);
+        randomY = UnityEngine.Random.Range(0f, 0.2f);
 
         //creating a Vector2 tweak with a random X and random Y
         Vector2 tweak = new Vector2(randomX, randomY);
@@ -45,17 +45,18 @@ public class ball : MonoBehaviour {
         paddleToBallVector = this.transform.position - myPaddle.transform.position;
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         if (!hasStarted)  //if (hasStarted == false)
         {
             //lock the ball with the paddle
             this.transform.position = myPaddle.transform.position + paddleToBallVector;
-            
+
             // if left click is pressed
-            if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 print("Left Click");
                 hasStarted = true;
@@ -65,41 +66,7 @@ public class ball : MonoBehaviour {
             }
         }
 
-        if (transform.position.x < -25f)
-        {
-
-
-            transform.position = Vector3.zero;
-            create.velocity = Vector3.zero;
-
-            Scoreboard.instance.Scorep2();
-
-            StartCoroutine(Pause());
-
-        }
-
-        if (transform.position.x < 25f)
-        {
-
-
-            transform.position = Vector3.zero;
-            create.velocity = Vector3.zero;
-
-            Scoreboard.instance.Scorep1();
-
-            StartCoroutine(Pause());
-
-        }
-
-
     }
-
-
-    private IEnumerator Pause()
-    {
-        throw new NotImplementedException();
-    }
-
 
 }
 

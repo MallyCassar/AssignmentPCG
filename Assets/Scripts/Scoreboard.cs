@@ -11,52 +11,37 @@ public class Scoreboard : MonoBehaviour {
     public Text score1Text;
     public Text score2Text;
 
-    public int score1;
-    public int score2;
+    public int score1 = 0;
+    public int score2 = 0;
 
 	// Use this for initialization
 	void Start () {
         instance = this;
+    }
 
-        score1 = score2 = 0;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void Scorep1()
+    void Update()
     {
-        score1 += 1;
-        score1Text.text = score1.ToString();
-
-        if (score1 == 5)
+        if (PlayerPrefs.GetInt("score1") == 5 || PlayerPrefs.GetInt("score2") == 5)
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("level2");
         }
 
-        if (score1 == 10)
+        if (PlayerPrefs.GetInt("score1") == 10 || PlayerPrefs.GetInt("score2") == 10)
         {
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("level3");
         }
 
     }
 
-    public void Scorep2()
+    //OnGUI is used to only runs once but keeps update functuality.
+    void OnGUI() {
+        score1Text.text = PlayerPrefs.GetInt("score1").ToString();
+        score2Text.text = PlayerPrefs.GetInt("score2").ToString();
+    }
+
+    void OnApplicationClose()
     {
-        score2 += 1;
-        score2Text.text = score1.ToString();
-
-        if (score2 == 5)
-        {
-            SceneManager.LoadScene("Level2");
-        }
-
-        if (score2 == 10)
-        {
-            SceneManager.LoadScene("Level3");
-        }
-
+        PlayerPrefs.SetInt("score1", 0);
+        PlayerPrefs.SetInt("score2", 0);
     }
 }
